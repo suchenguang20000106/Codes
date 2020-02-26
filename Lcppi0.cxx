@@ -92,11 +92,11 @@ cout << "before tree" << endl;
 
 		if(decay_ppi0){
 				NTuplePtr nt10(ntupleSvc(), "FILE1/ppi0");
-				   if(nt10) m_nt10 = nt10;
+				if(nt10) m_nt10 = nt10;
 
-            else{
-						 m_nt10 = ntupleSvc()->book("FILE1/ppi0", CLID_ColumnWiseTuple, "Lc+ Study");
-						 }
+                else{
+				  m_nt10 = ntupleSvc()->book("FILE1/ppi0", CLID_ColumnWiseTuple, "Lc+ Study");
+				}
 				if(m_nt10){
 
             status = m_nt10->addItem("n_Lc", n_Lc, 0, 1000);
@@ -119,8 +119,8 @@ cout << "before tree" << endl;
         
         }
 				else{
-						log << MSG::ERROR << "  Cannot book N-tuple10: " << long(m_nt10) << endreq;
-            return StatusCode::FAILURE;
+				  log << MSG::ERROR << "  Cannot book N-tuple10: " << long(m_nt10) << endreq;
+                  return StatusCode::FAILURE;
 				}
 		}
 		
